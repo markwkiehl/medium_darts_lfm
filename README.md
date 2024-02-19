@@ -1,7 +1,7 @@
 # Find The Best Darts Local Forecasting Model
 
 <p>A single Python script executes 26 of the Darts Local Forecasting Models and compares their accuracy. The seasonal and trend arguments required by the models are automatically derived and applied to each model.</p>
-![cover image](https://githubusercontent.com/markwkiehl/medium_darts_lfm/raw/0c5097c3b96cb9506078f048c3970073ebfda911/darts%2025%20dataset%20LFM%20plot%20(1).png)
+![cover image](https://github.com/markwkiehl/medium_darts_lfm/raw/0c5097c3b96cb9506078f048c3970073ebfda911/darts%2025%20dataset%20LFM%20plot%20(1).png)
 
 ## Selecting a Forecasting Model
 Back in February 2024 I published ["Darts Time Series TFM Forecasting"](https://medium.com/@markwkiehl/darts-time-series-tfm-forecasting-8275ccc93a43) where I presented a complete solution for the optimization of Darts Torch Forecasting Models, and a methodology to follow that allowed you to run any model. See that article for more information about Darts, Darts time series terminology, and how to select a forecasting model.
@@ -22,9 +22,9 @@ Back in February 2024 I published ["Darts Time Series TFM Forecasting"](https://
 </ul>
 <p>The script finds any trend and seasonality in the data, and then generates the appropriate arguments for each Local Forecasting Model. Through my extensive testing, I found that some of the arguments for some models don't accept 'lags=None', despite what the documentation states. I made adjustments as necessary for each model to set lags=1 when seasonality doesn't exist.
 </p>
-![All 26 LFM Results](https://github.com/markwkiehl/medium_darts_lfm/blob/0c5097c3b96cb9506078f048c3970073ebfda911/darts%2025%20dataset%20LFM%20plot%20(1).png)
-![The best model among 26 LFM](https://github.com/markwkiehl/medium_darts_lfm/blob/0c5097c3b96cb9506078f048c3970073ebfda911/darts%2025%20dataset%20LFM%20plot%20(2).png)
-![Results for 7 LFM that support multivariate series](https://github.com/markwkiehl/medium_darts_lfm/blob/0c5097c3b96cb9506078f048c3970073ebfda911/darts%207x%20LFM%20multivariate%20(1).png)
+![All 26 LFM Results](https://github.com/markwkiehl/medium_darts_lfm/raw/0c5097c3b96cb9506078f048c3970073ebfda911/darts%2025%20dataset%20LFM%20plot%20(1).png)
+![The best model among 26 LFM](https://github.com/markwkiehl/medium_darts_lfm/raw/0c5097c3b96cb9506078f048c3970073ebfda911/darts%2025%20dataset%20LFM%20plot%20(2).png)
+![Results for 7 LFM that support multivariate series](https://github.com/markwkiehl/medium_darts_lfm/raw/0c5097c3b96cb9506078f048c3970073ebfda911/darts%207x%20LFM%20multivariate%20(1).png)
 
 ## Conclusions
 <p>The script and functions work with univariate & multivariate series with a datetime or range/integer index, but multiple series are not supported. Past, future, and static covariates are supported. I hope that my extensive testing and development has resulted in something that other users can quickly utilize to quickly find the best Darts Local Forecasting Model for their data. If you have something that doesn't work well, please let me know and I would enjoy looking at it. 
