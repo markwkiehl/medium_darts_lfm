@@ -1,10 +1,10 @@
 # Find The Best Darts Local Forecasting Model
 
 <p>A single Python script executes 26 of the Darts Local Forecasting Models and compares their accuracy. The seasonal and trend arguments required by the models are automatically derived and applied to each model.</p>
-![cover image](https://raw.githubusercontent.com/markwkiehl/medium_darts_lfm/0c5097c3b96cb9506078f048c3970073ebfda911/darts%2025%20dataset%20LFM%20plot%20(1).png)
+![cover image](https://githubusercontent.com/markwkiehl/medium_darts_lfm/raw/0c5097c3b96cb9506078f048c3970073ebfda911/darts%2025%20dataset%20LFM%20plot%20(1).png)
 
 ## Selecting a Forecasting Model
-Back in February 2024 I published ["Darts Time Series TFM Forecasting"](https://medium.com/@markwkiehl/darts-time-series-tfm-forecasting-8275ccc93a43?raw=true) where I presented a complete solution for the optimization of Darts Torch Forecasting Models, and a methodology to follow that allowed you to run any model. See that article for more information about Darts, Darts time series terminology, and how to select a forecasting model.
+Back in February 2024 I published ["Darts Time Series TFM Forecasting"](https://medium.com/@markwkiehl/darts-time-series-tfm-forecasting-8275ccc93a43) where I presented a complete solution for the optimization of Darts Torch Forecasting Models, and a methodology to follow that allowed you to run any model. See that article for more information about Darts, Darts time series terminology, and how to select a forecasting model.
 
 ## Darts Local Forecasting Models
 <p>This article focuses on the <b>Darts Local Forecasting Models (LFM)</b>, and provides a solution for running nearly all models (26 of them) against a time series data set. The time series can be univariate, multivariate, and it can include past/future/static covariate series and encoders. Not every model supports all of these options, but the functions I am providing will automatically resolve all of that for you.
