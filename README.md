@@ -1,8 +1,7 @@
 # Find The Best Darts Local Forecasting Model
 
 <p>A single Python script executes 26 of the Darts Local Forecasting Models and compares their accuracy. The seasonal and trend arguments required by the models are automatically derived and applied to each model.</p>
-<p><img src="https://raw.githubusercontent.com/markwkiehl/medium_darts_lfm/e7a091cf212321a17408f34c3c4adf948deeb125/assets/darts_25x_dataset_LFM_plot(1).png" alt="cover image" title="cover image"></p>
-
+<p><img src="https://github.com/markwkiehl/medium_darts_lfm/blob/e7a091cf212321a17408f34c3c4adf948deeb125/assets/darts_25x_dataset_LFM_plot(1).png" alt="cover image" title="cover image"></p>
 
 ## Selecting a Forecasting Model
 Back in February 2024 I published ["Darts Time Series TFM Forecasting"](https://medium.com/@markwkiehl/darts-time-series-tfm-forecasting-8275ccc93a43) where I presented a complete solution for the optimization of Darts Torch Forecasting Models, and a methodology to follow that allowed you to run any model. See that article for more information about Darts, Darts time series terminology, and how to select a forecasting model.
