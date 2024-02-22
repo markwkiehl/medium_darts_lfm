@@ -1,7 +1,7 @@
 # Find The Best Darts Local Forecasting Model
 
 <p>A single Python script executes 26 of the Darts Local Forecasting Models and compares their accuracy. The seasonal and trend arguments required by the models are automatically derived and applied to each model.</p>
-![alt text](/assets/darts_25x_dataset_LFM_plot(1).png)
+![alt text](/assets/darts_25x_dataset_LFM_plot(1).png?raw=true)
 
 
 ## Selecting a Forecasting Model
