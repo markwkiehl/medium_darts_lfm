@@ -24,7 +24,7 @@ Back in February 2024 I published ["Darts Time Series TFM Forecasting"](https://
 </p>
 
 ## How Model Specific Arguments & Capabilities Are Defined
-<p>The ability to fine tune arguments by model is possible because the capabilities and arguments for each are stored in a Python [NamedTuple](https://docs.python.org/3/library/collections.html#collections.namedtuple). The capabilities are for the most part what you see in the Darts Forecasting Models table. This data structure is also used to filter out models that are not applicable to the data being processed.</p>
+<p>The ability to fine tune arguments by model is possible because the capabilities and arguments for each are stored in a <a href="https://docs.python.org/3/library/collections.html#collections.namedtuple" target="_blank">Python NamedTuple</a>. The capabilities are for the most part what you see in the Darts Forecasting Models table. This data structure is also used to filter out models that are not applicable to the data being processed.</p>
 
 ```
 # Define a data structure to hold the model objects, capabilities, & their specific arguments
