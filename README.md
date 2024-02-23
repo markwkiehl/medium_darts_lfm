@@ -22,6 +22,7 @@ Back in February 2024 I published ["Darts Time Series TFM Forecasting"](https://
 </ul>
 <p>The script finds any trend and seasonality in the data, and then generates the appropriate arguments for each Local Forecasting Model. Through my extensive testing, I found that some of the arguments for some models don't accept 'lags=None', despite what the documentation states. I made adjustments as necessary for each model to set lags=1 when seasonality doesn't exist.
 </p>
+<p><img src="assets/darts_25x_dataset_LFM_plot(1).png" alt="25x Darts Local Forecasting Model results" title="Results for 25x Darts Local Forecasting Models"></p>
 ![All 26 LFM Results](https://github.com/markwkiehl/medium_darts_lfm/raw/0c5097c3b96cb9506078f048c3970073ebfda911/darts%2025%20dataset%20LFM%20plot%20(1).png)
 ![The best model among 26 LFM](https://github.com/markwkiehl/medium_darts_lfm/raw/0c5097c3b96cb9506078f048c3970073ebfda911/darts%2025%20dataset%20LFM%20plot%20(2).png)
 ![Results for 7 LFM that support multivariate series](https://github.com/markwkiehl/medium_darts_lfm/raw/0c5097c3b96cb9506078f048c3970073ebfda911/darts%207x%20LFM%20multivariate%20(1).png)
