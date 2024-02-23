@@ -22,14 +22,6 @@ Back in February 2024 I published ["Darts Time Series TFM Forecasting"](https://
 </ul>
 <p>The script finds any trend and seasonality in the data, and then generates the appropriate arguments for each Local Forecasting Model. Through my extensive testing, I found that some of the arguments for some models don't accept 'lags=None', despite what the documentation states. I made adjustments as necessary for each model to set lags=1 when seasonality doesn't exist.
 </p>
-<p><img src="assets/darts_25x_dataset_LFM_plot(1).png" alt="25x Darts Local Forecasting Model results" title="Results for 25x Darts Local Forecasting Models"></p>
-![All 26 LFM Results](https://github.com/markwkiehl/medium_darts_lfm/raw/0c5097c3b96cb9506078f048c3970073ebfda911/darts%2025%20dataset%20LFM%20plot%20(1).png)
-![The best model among 26 LFM](https://github.com/markwkiehl/medium_darts_lfm/raw/0c5097c3b96cb9506078f048c3970073ebfda911/darts%2025%20dataset%20LFM%20plot%20(2).png)
-![Results for 7 LFM that support multivariate series](https://github.com/markwkiehl/medium_darts_lfm/raw/0c5097c3b96cb9506078f048c3970073ebfda911/darts%207x%20LFM%20multivariate%20(1).png)
-
-## Conclusions
-<p>The script and functions work with univariate & multivariate series with a datetime or range/integer index, but multiple series are not supported. Past, future, and static covariates are supported. I hope that my extensive testing and development has resulted in something that other users can quickly utilize to quickly find the best Darts Local Forecasting Model for their data. If you have something that doesn't work well, please let me know and I would enjoy looking at it. 
-</p>
 
 ## How Model Specific Arguments & Capabilities Are Defined
 <p>The ability to fine tune arguments by model is possible because the capabilities and arguments for each are stored in a Python [NamedTuple](https://docs.python.org/3/library/collections.html#collections.namedtuple). The capabilities are for the most part what you see in the Darts Forecasting Models table. This data structure is also used to filter out models that are not applicable to the data being processed.</p>
@@ -60,6 +52,24 @@ Some models require or work better when the data is min/max scaled to a range of
 </p>
 
 ## Visualization
-<p>You can configure the script to show a plot of the forecast for each model, or a single figure with multiple plots for all models. You can also have the best model plotted.  
+<p>You can configure the script to show a plot of the forecast for each model, or a single figure with multiple plots for all models. You can also have the best model plotted.
 </p>
-```raw.githubusercontent.com```
+<p><img src="assets/darts_25x_dataset_LFM_plot(1).png" alt="25x Darts Local Forecasting Model results" title="Results for 25x Darts Local Forecasting Models"></p>
+<p><img src="assets/darts_25x_dataset_LFM_plot(2).png" alt="25x Darts Local Forecasting Model best result" title="Best result for 25x Darts Local Forecasting Models"></p>
+<p><img src="assets/darts_7x_LFM_multivariate(1).png" alt="Results for 7x LFM that support multivariate series" title="Results for 7x LFM that support multivariate series"></p>
+
+## Github Repository
+<p>All custom functions and the primary example script are available on the Github repository at https://github.com/markwkiehl/medium_darts_lfm/ within the single file ‘medium_darts_lfm.py’</p>
+
+## Conclusions
+<p>Using the provided script and functions, you can automatically execute a forecasts on up to 26 Darts Local Forecasting Models and quickly find what models produce the best prediction. The script and functions work with univariate & multivariate series with a datetime or range/integer index, but multiple series are not supported. Past, future, and static covariates are supported.
+</p>
+<p>I hope that my extensive testing and development has resulted in something that other users can quickly utilize to quickly find the best Darts Local Forecasting Model for their data. If you have something that doesn’t work well, please let me know and I would enjoy looking at it.
+</p>
+
+## References
+All images created by the author.
+
+<a href="https://github.com/markwkiehl/medium_darts_lfm">GitHub repository</a> with functions and examples all contained within the single medium_darts_lfm.py Python file.
+
+<a href="https://github.com/unit8co/darts?tab=readme-ov-file#forecasting-models" target="_blank">Darts table for forecasting model selection</a>
