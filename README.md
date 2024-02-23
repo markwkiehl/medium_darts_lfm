@@ -25,6 +25,7 @@ Back in February 2024 I published ["Darts Time Series TFM Forecasting"](https://
 
 ## How Model Specific Arguments & Capabilities Are Defined
 <p>The ability to fine tune arguments by model is possible because the capabilities and arguments for each are stored in a Python [NamedTuple](https://docs.python.org/3/library/collections.html#collections.namedtuple). The capabilities are for the most part what you see in the Darts Forecasting Models table. This data structure is also used to filter out models that are not applicable to the data being processed.</p>
+
 ```
 # Define a data structure to hold the model objects, capabilities, & their specific arguments
 class DartsModel(NamedTuple):
@@ -40,7 +41,7 @@ class DartsModel(NamedTuple):
  val_series: bool = False
  add_encoders: bool = True
  min_max_scale: bool = False
- ```
+```
 
 ## Encoders & Feature Scaling
 <p>Many models accept encoders via the 'add_encoders' argument. My script attempts to generate encoders automatically for each model that supports them based on the series index and any seasonality. 
