@@ -3,6 +3,8 @@
 #   http://mechatronicsolutionsllc.com/
 #   http://www.savvysolutions.info/savvycodesolutions/
 
+#   v20240226
+
 
 
 def df_has_nan_or_nat(df=None, results_by_col=False, verbose=False):
@@ -450,6 +452,45 @@ def ts_seasonality(ts=None, verbose=False):
     return seasonal_period, seasonality_mode, decomposition_type
 
 
+def ts_seasonal_periods(ts=None, sort_ascending=True, unique=False):
+    # Returns list of the seasonal periods of the Darts TimeSeries ts.
+    # Most useful if 'ts' is a multivariate series. 
+    # Returns empty list if no seasonality found. 
+
+    # Get the seasonal periods of all three components/columns in the multivariate series 'ts':
+    # print("seasonal_periods:", ts_seasonal_periods(ts=ts, sort_ascending=False, unique=False))    # seasonal_periods: [20, 20, 9]
+    
+    # Get the minimum seasonal period in the multivariate series 'ts' with three components/columns:
+    # print("seasonal_periods:", ts_seasonal_periods(ts=ts, sort_ascending=True, unique=True))        # seasonal_periods: [9, 20]
+
+    from darts import TimeSeries
+    from darts.utils.statistics import check_seasonality
+
+    if not isinstance(ts, TimeSeries): raise Exception("ts is not a Darts TimeSeries")
+
+    seasonal_periods = []
+
+    """
+    if ts.width == 1:
+        is_seasonal, seasonal_period = check_seasonality(ts=ts)
+        if is_seasonal: 
+            seasonal_periods.append(seasonal_period)
+    """
+        
+    # ts.width > 1
+    for idx in range(0, ts.width):
+        series = ts.univariate_component(idx)
+        is_seasonal, seasonal_period = check_seasonality(ts=series)
+        if is_seasonal: 
+            if unique == True:
+                if not seasonal_period in seasonal_periods: seasonal_periods.append(seasonal_period)
+            else:
+                seasonal_periods.append(seasonal_period)
+
+    if sort_ascending: seasonal_periods.sort()
+    return seasonal_periods
+
+
 
 def get_darts_local_forecasting_models(ts=None, model_mode=None, trend_str=None, trend_mode=None, use_trend=None, is_stationary=None,
                                        seasonal_period=None, seasonality_mode=None, decomposition_type=None, is_seasonal=None,
@@ -725,8 +766,8 @@ def try_all_darts_lfm(ts=None, past_covariates=None, future_covariates=None, min
     from darts.metrics import rmse
     import torch
 
-    from savvy_time_series import ts_seasonal_periods, ts_seasonality, ts_trend_mode, reset_matplotlib, get_subplots_nrows_ncols
-    from savvy_time_series import get_idx_datetime_attr, sec_to_dhms, get_darts_local_forecasting_models
+    #from savvy_time_series import ts_seasonal_periods, ts_seasonality, ts_trend_mode, reset_matplotlib, get_subplots_nrows_ncols
+    #from savvy_time_series import get_idx_datetime_attr, sec_to_dhms, get_darts_local_forecasting_models
     import time
     from pathlib import Path
     from operator import itemgetter
@@ -822,7 +863,7 @@ def try_all_darts_lfm(ts=None, past_covariates=None, future_covariates=None, min
     else:
         seasonal_period = int(seasonal_periods[0])
         is_seasonal = True
-    from savvy_time_series import ts_seasonality
+    #from savvy_time_series import ts_seasonality
     seasonal_period, seasonality_mode, decomposition_type = ts_seasonality(ts)
     if verbose:
         if is_seasonal == False:
