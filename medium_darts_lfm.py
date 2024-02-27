@@ -3,7 +3,7 @@
 #   http://mechatronicsolutionsllc.com/
 #   http://www.savvysolutions.info/savvycodesolutions/
 
-#   v20240226
+#   v20240227
 
 
 
@@ -779,7 +779,7 @@ def try_all_darts_lfm(ts=None, past_covariates=None, future_covariates=None, min
     warnings.filterwarnings("ignore")
     import logging
     logging.disable(logging.CRITICAL)
-    from time_series_data_sets import sine_gaussian_noise_covariate
+    #from time_series_data_sets import sine_gaussian_noise_covariate
 
     # for reproducibility
     torch.manual_seed(1)
